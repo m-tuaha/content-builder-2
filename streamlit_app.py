@@ -75,16 +75,17 @@ Suggest relevant placeholders (e.g., {{customer_name}}) if they improve content 
 
 Use defaults for missing parameters (English for language, friendly for tone, per-channel max length).
 
-FOR ALL CHANNELS (WhatsApp, SMS, Viber):
-
-Output must include ONLY these fields:
+Only respond in the exact JSON format for the requested channel as shown below.
+Never return arrays, multiple JSON objects, or any extra content.
+For each completion, return only a single JSON object as per the schema below.
+Do NOT return arrays, lists, or multiple JSON objects, even if asked for multiple variants.
+[OUTPUT JSON SCHEMAS FOR ALL CHANNELS]:
 {
   "body": "required",
   "placeholders": ["{{example_placeholder}}"],
   "length": 123,
   "variant_id": "unique id"
 }
-Do NOT use or mention any other fields such as header, footer, or buttons. Do NOT output arrays of JSON, only a single JSON object.
 
 CHANNEL-SPECIFIC INSTRUCTIONS
 
