@@ -79,6 +79,9 @@ Only respond in the exact JSON format for the requested channel as shown below.
 Never return arrays, multiple JSON objects, or any extra content.
 For each completion, return only a single JSON object as per the schema below.
 Do NOT return arrays, lists, or multiple JSON objects, even if asked for multiple variants.
+The `placeholders` field must ALWAYS be a JSON array of strings, like: ["{{customer_name}}"]. 
+Do NOT output placeholders without double quotes. Do NOT output the field as a single string or with unquoted curly braces.
+
 [OUTPUT JSON SCHEMAS FOR ALL CHANNELS]:
 {
   "body": "required",
